@@ -14,6 +14,7 @@ export default function TabRoutes() {
       tabBar={(props) => <MyTabBar {...props} />}
       screenOptions={{
         headerShown: false,
+        tabBarStyle: { borderWidth: 0 },
       }}>
       <Tab.Screen name="Community" component={Onboarding} />
       <Tab.Screen name="Chats" component={Chats} />

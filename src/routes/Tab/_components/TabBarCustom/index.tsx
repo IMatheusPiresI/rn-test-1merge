@@ -13,8 +13,11 @@ export const MyTabBar: React.FC<IProps> = ({ state, navigation }) => (
     width="full"
     borderTopLeftRadius={28}
     borderTopRightRadius={28}
-    backgroundColor="#fff"
-    borderWidth={0}
+    backgroundColor="white"
+    borderWidth="0"
+    borderColor="white"
+    position={'absolute'}
+    bottom={0}
     style={style.shadow}>
     {state.routes.map((route, index) => {
       const isFocused = state.index === index;
@@ -59,8 +62,8 @@ export const MyTabBar: React.FC<IProps> = ({ state, navigation }) => (
 const style = StyleSheet.create({
   shadow: {
     elevation: 6,
-    shadowColor: '#000',
-    shadowRadius: 0.25,
-    shadowOpacity: 0.6,
+    shadowColor: '#0005',
+    shadowRadius: 0.2,
+    shadowOpacity: 0.25,
   },
 });
