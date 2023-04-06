@@ -8,7 +8,7 @@ const TabView: React.FC<IViewProps> = ({ isFocused, iconName, ...rest }) => (
     <MaterialIcons
       name={iconName}
       size={34}
-      color={isFocused ? '#00ff' : '#c7c7c7'}
+      color={isFocused ? '#703EFE' : '#A09F9F'}
     />
   </TouchableOpacity>
 );

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from '@screens/App/Home';
+import Posts from '@screens/App/Posts';
 import { MyTabBar } from './_components/TabBarCustom';
-import Onboarding from '@screens/Authentication/Onboarding';
 import Chats from '@screens/App/Chats';
+import Community from '@screens/App/Community';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,11 +16,11 @@ export default function TabRoutes() {
         headerShown: false,
         tabBarStyle: { borderWidth: 0 },
       }}>
-      <Tab.Screen name="Community" component={Onboarding} />
+      <Tab.Screen name="Community" component={Community} />
       <Tab.Screen name="Chats" component={Chats} />
       <Tab.Screen name="Empty" component={EmptyComponent} />
-      <Tab.Screen name="Posts" component={Home} />
-      <Tab.Screen name="Settings" component={Home} />
+      <Tab.Screen name="Posts" component={Posts} />
+      <Tab.Screen name="Settings" component={Posts} />
     </Tab.Navigator>
   );
 }

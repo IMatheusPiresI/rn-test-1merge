@@ -1,4 +1,6 @@
-type IProps = {};
+type IProps = {
+  handleSelect: () => void;
+};
 
 type IViewProps = {};
 

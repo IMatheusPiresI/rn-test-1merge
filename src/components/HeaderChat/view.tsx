@@ -1,25 +1,14 @@
 import React from 'react';
-import { Box, Input, VStack } from 'native-base';
+import { Box, VStack } from 'native-base';
 import { IViewProps } from './types';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import EditSVG from '../../assets/svg/edit.svg';
 import ButtonOpacity from '@components/ButtonOpacity';
+import { InputSearch } from '@components/Forms/InputSearch';
 
 const HeaderChatView: React.FC<IViewProps> = () => (
   <VStack h={16} flexDir="row">
-    <Box justifyContent="center" flex={1} mr={4}>
-      <Input
-        bgColor="white"
-        placeholder="Search message..."
-        pl="16"
-        fontSize={18}
-        h={16}
-        borderRadius={4}
-        borderWidth={0}
-      />
-      <Box position="absolute" left={4}>
-        <MaterialIcons name="search" size={34} color={'#bfbfbf'} />
-      </Box>
+    <Box flex={1} mr={4}>
+      <InputSearch placeholder="Search message..." />
     </Box>
     <Box
       w={16}

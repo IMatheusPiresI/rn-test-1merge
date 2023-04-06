@@ -7,10 +7,10 @@ import { IViewProps } from './types';
 const ActionButtonView: React.FC<IViewProps> = () => (
   <VStack alignItems="center" w={12} justifyContent="center" zIndex={99}>
     <Box
-      width={60}
-      height={60}
+      width={65}
+      height={65}
       overflow="hidden"
-      bgColor={'#00ff'}
+      bgColor={'#703EFE'}
       borderRadius={'full'}
       alignItems="center"
       justifyContent="center"
@@ -36,7 +36,7 @@ const style = StyleSheet.create({
   },
   shadowButton: {
     elevation: 8,
-    shadowColor: '#00ff',
+    shadowColor: '#703EFE',
     shadowRadius: 0.25,
     shadowOpacity: 0.6,
   },

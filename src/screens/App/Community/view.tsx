@@ -1,0 +1,38 @@
+import React from 'react';
+import { Box, FlatList, VStack } from 'native-base';
+import { InputSearch } from '@components/Forms/InputSearch';
+import CardCommunity from '@components/CardCommunity';
+import { StyleSheet } from 'react-native';
+import { mockCommunity } from '../../../mocks/mockCommunity';
+import { IViewProps } from './types';
+
+const CommunityView: React.FC<IViewProps> = ({ handleSelectCommunity }) => (
+  <VStack flex={1} bgColor={'#F7F7F7'} py="statusBarHeight16" px={5}>
+    <Box h={16} w="full">
+      <InputSearch placeholder="Pesquise por comunidade..." />
+    </Box>
+    <VStack flex={1} mt={4}>
+      <FlatList
+        data={mockCommunity}
+        showsVerticalScrollIndicator={false}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <CardCommunity
+            data={item}
+            onPress={() => handleSelectCommunity(item.id)}
+          />
+        )}
+        ItemSeparatorComponent={() => <Box h={4} />}
+        contentContainerStyle={styles.list}
+      />
+    </VStack>
+  </VStack>
+);
+
+export default CommunityView;
+
+const styles = StyleSheet.create({
+  list: {
+    paddingBottom: 140,
+  },
+});

@@ -1,19 +1,20 @@
 import React from 'react';
 import { Box, FlatList, VStack } from 'native-base';
 import HeaderChat from '@components/HeaderChat';
-import CardChatMessageView from '@components/CardChatMessage/view';
+import { CardChatMessage } from '@components/CardChatMessage';
 import { StyleSheet } from 'react-native';
+import { IViewProps } from './types';
 
-const ChatsView: React.FC = () => (
+const ChatsView: React.FC<IViewProps> = ({ chats }) => (
   <VStack flex={1} bgColor="#F7F7F7" py="statusBarHeight16" px="5">
     <Box>
       <HeaderChat />
     </Box>
-    <VStack flex={1} mt={8}>
+    <VStack flex={1} mt={4}>
       <FlatList
-        data={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
-        keyExtractor={(item) => String(item)}
-        renderItem={() => <CardChatMessageView />}
+        data={chats}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <CardChatMessage data={item} />}
         showsVerticalScrollIndicator={false}
         ItemSeparatorComponent={() => <Box h={4} />}
         contentContainerStyle={styles.list}
@@ -26,6 +27,6 @@ export default ChatsView;
 
 const styles = StyleSheet.create({
   list: {
-    paddingBottom: 90,
+    paddingBottom: 140,
   },
 });

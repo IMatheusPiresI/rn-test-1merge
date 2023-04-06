@@ -6,9 +6,14 @@ import BrazilFlagSVG from '@assets/svg/brazil-flag.svg';
 import { StyleSheet } from 'react-native';
 import { CountrySelect } from './_components/CountrySelect';
 
-const PhoneRegisterView: React.FC<IViewProps> = () => (
+const PhoneRegisterView: React.FC<IViewProps> = ({
+  showCountrySearch,
+  handleCloseCountrySearch,
+  handleSelectCountry,
+  handleToogleShowCountrySearch,
+}) => (
   <VStack w="full" bgColor="#fff">
-    <CountrySelect />
+    {showCountrySearch && <CountrySelect handleSelect={handleSelectCountry} />}
     <HStack>
       <Pressable
         bgColor={'#DADADA'}
@@ -16,6 +21,7 @@ const PhoneRegisterView: React.FC<IViewProps> = () => (
         borderTopLeftRadius={4}
         borderBottomLeftRadius={4}
         justifyContent={'center'}
+        onPress={handleToogleShowCountrySearch}
         style={styles.boxButtonCountry}>
         <BrazilFlagSVG width={20} height={20} />
       </Pressable>

@@ -13,7 +13,8 @@
       "@routes/*": ["./routes/*"],
       "@store/*": ["./store/*"],
       "@schemas/*": ["./schemas/*"],
-      "@services/*": ["./services/*"]
+      "@services/*": ["./services/*"],
+      "@mocks/*": ["./mocks/*"]
     }
   }
 }

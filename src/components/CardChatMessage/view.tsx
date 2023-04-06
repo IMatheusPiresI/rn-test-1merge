@@ -3,23 +3,26 @@ import React from 'react';
 import { IViewProps } from './types';
 import ProfilePhoto from '@assets/images/profilephoto.jpeg';
 
-const CardChatMessageView: React.FC<IViewProps> = () => {
-  const renderQuantityMessages = () => (
-    <Box
-      w={6}
-      h={6}
-      mt={1}
-      borderRadius="full"
-      bgColor="#703EFE"
-      alignItems="center"
-      justifyContent="center">
-      <Text color="white" fontSize={14} textAlign="center">
-        3
-      </Text>
-    </Box>
-  );
+const CardChatMessageView: React.FC<IViewProps> = ({ data, lastMessage }) => {
+  const renderQuantityMessages = () => {
+    if (data.newMessages === 0) return;
+    return (
+      <Box
+        w={6}
+        h={6}
+        mt={1}
+        borderRadius="full"
+        bgColor="#703EFE"
+        alignItems="center"
+        justifyContent="center">
+        <Text color="white" fontSize={14} textAlign="center">
+          {data.newMessages}
+        </Text>
+      </Box>
+    );
+  };
   return (
-    <HStack py={4} px={6} bgColor="white" borderRadius={4} flexDir="row">
+    <HStack py={2} px={6} bgColor="white" borderRadius={4} flexDir="row">
       <Box>
         <Image
           source={ProfilePhoto}
@@ -40,12 +43,12 @@ const CardChatMessageView: React.FC<IViewProps> = () => {
       </Box>
       <VStack ml={4} flex={1}>
         <Text color="black" fontWeight="bold" mt={2}>
-          Miler Augusto
+          {data.nameContact}
         </Text>
-        <Text color="#A09F9F">Perfect Will check it!</Text>
+        <Text color="#A09F9F">{lastMessage.text}</Text>
       </VStack>
       <VStack alignItems="flex-end">
-        <Text color="#A09F9F">09:34 PM</Text>
+        <Text color="#A09F9F">{lastMessage.time}</Text>
         {renderQuantityMessages()}
       </VStack>
     </HStack>
