@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Home from '@screens/Home';
+import Home from '@screens/App/Home';
 import { MyTabBar } from './_components/TabBarCustom';
-import Onboarding from '@screens/Onboarding';
-import Chats from '@screens/Chats';
+import Onboarding from '@screens/Authentication/Onboarding';
+import Chats from '@screens/App/Chats';
 
 const Tab = createBottomTabNavigator();
 

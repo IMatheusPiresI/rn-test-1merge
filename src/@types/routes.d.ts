@@ -5,6 +5,7 @@ export declare global {
       Authentication: undefined;
       Onboarding: undefined;
       Home: undefined;
+      VerifySMS: undefined;
     }
   }
 }

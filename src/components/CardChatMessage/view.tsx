@@ -10,7 +10,7 @@ const CardChatMessageView: React.FC<IViewProps> = () => {
       h={6}
       mt={1}
       borderRadius="full"
-      bgColor="purple.600"
+      bgColor="#703EFE"
       alignItems="center"
       justifyContent="center">
       <Text color="white" fontSize={14} textAlign="center">
@@ -23,7 +23,7 @@ const CardChatMessageView: React.FC<IViewProps> = () => {
       <Box>
         <Image
           source={ProfilePhoto}
-          alt="euu"
+          alt="Image"
           w={55}
           h={55}
           borderRadius="full"
@@ -34,7 +34,7 @@ const CardChatMessageView: React.FC<IViewProps> = () => {
           right={-2}
           w={4}
           h={4}
-          bgColor="green.400"
+          bgColor="#36C287"
           borderRadius="full"
         />
       </Box>
@@ -42,10 +42,10 @@ const CardChatMessageView: React.FC<IViewProps> = () => {
         <Text color="black" fontWeight="bold" mt={2}>
           Miler Augusto
         </Text>
-        <Text color="#a6a6a6">Perfect Will check it!</Text>
+        <Text color="#A09F9F">Perfect Will check it!</Text>
       </VStack>
       <VStack alignItems="flex-end">
-        <Text color="#a6a6a6">09:34 PM</Text>
+        <Text color="#A09F9F">09:34 PM</Text>
         {renderQuantityMessages()}
       </VStack>
     </HStack>

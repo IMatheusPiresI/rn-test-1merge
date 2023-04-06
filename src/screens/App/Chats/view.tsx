@@ -5,7 +5,7 @@ import CardChatMessageView from '@components/CardChatMessage/view';
 import { StyleSheet } from 'react-native';
 
 const ChatsView: React.FC = () => (
-  <VStack flex={1} bgColor="#f7f7f71" py="statusBarHeight16" px="5">
+  <VStack flex={1} bgColor="#F7F7F7" py="statusBarHeight16" px="5">
     <Box>
       <HeaderChat />
     </Box>

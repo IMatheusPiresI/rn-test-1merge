@@ -8,12 +8,12 @@ import { useNavigation } from '@react-navigation/native';
 export const Onboarding: React.FC = () => {
   const navigation = useNavigation();
 
-  const handleGoToApp = () => {
-    navigation.navigate('AppRoutes');
+  const handleGoToVerifySMS = () => {
+    navigation.navigate('VerifySMS');
   };
 
   const viewProps: IViewProps = {
-    handleGoToApp,
+    handleGoToVerifySMS,
   };
 
   return createElement(View, viewProps);

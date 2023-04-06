@@ -1,6 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import TabRoutes from '@routes/Tab/tab.routes';
-import Onboarding from '@screens/Onboarding';
+import Onboarding from '@screens/Authentication/Onboarding';
+import VerifySMS from '@screens/Authentication/VerifySMS';
 
 const Stack = createStackNavigator();
 
@@ -10,6 +11,7 @@ export const StackAuth = () => (
       headerShown: false,
     }}>
     <Stack.Screen name="Onboarding" component={Onboarding} />
+    <Stack.Screen name="VerifySMS" component={VerifySMS} />
   </Stack.Navigator>
 );
 

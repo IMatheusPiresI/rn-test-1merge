@@ -1,5 +1,5 @@
 type IViewProps = {
-  handleGoToApp: () => void;
+  handleConfirmPhone: () => void;
 };
 
 export { IViewProps };
