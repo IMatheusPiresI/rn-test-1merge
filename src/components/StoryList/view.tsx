@@ -11,9 +11,7 @@ const StoryListView: React.FC<IViewProps> = ({ storyList }) => (
       keyExtractor={(item) => item.id}
       horizontal={true}
       showsHorizontalScrollIndicator={false}
-      renderItem={({ item }) => (
-        <Story name={item.name} imageUrl={item.photo} />
-      )}
+      renderItem={({ item }) => <Story story={item} />}
       ItemSeparatorComponent={() => <Box w={5} />}
     />
   </Box>

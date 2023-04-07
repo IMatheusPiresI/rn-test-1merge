@@ -1,11 +1,13 @@
 import React, { createElement, useMemo } from 'react';
-import { IViewProps } from './types';
+import { IChat, IViewProps } from './types';
 
 import View from './view';
 import { useAppSelector } from '@store/index';
 import { mockChats } from '@mocks/mockChats';
+import { useNavigation } from '@react-navigation/native';
 
-const Chats: React.FC = () => {
+const AllChats: React.FC = () => {
+  const navigation = useNavigation();
   const { selectedCommunity } = useAppSelector((state) => state.user);
 
   const chats = useMemo(() => {
@@ -17,11 +19,16 @@ const Chats: React.FC = () => {
     return community.chats;
   }, [selectedCommunity.id]);
 
+  const handleOpenChat = (chat: IChat) => {
+    navigation.navigate('Chat', { chat });
+  };
+
   const viewProps: IViewProps = {
     chats,
+    handleOpenChat,
   };
 
   return createElement(View, viewProps);
 };
 
-export default Chats;
+export default AllChats;

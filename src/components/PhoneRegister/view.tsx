@@ -8,7 +8,6 @@ import { CountrySelect } from './_components/CountrySelect';
 
 const PhoneRegisterView: React.FC<IViewProps> = ({
   showCountrySearch,
-  handleCloseCountrySearch,
   handleSelectCountry,
   handleToogleShowCountrySearch,
 }) => (

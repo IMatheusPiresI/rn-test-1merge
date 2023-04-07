@@ -1,5 +1,6 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import TabRoutes from '@routes/Tab/tab.routes';
+import Chat from '@screens/App/Chat';
 import Onboarding from '@screens/Authentication/Onboarding';
 import VerifySMS from '@screens/Authentication/VerifySMS';
 
@@ -31,5 +32,6 @@ export const StackRoutes = () => (
     }}>
     <Stack.Screen name="Authentication" component={StackAuth} />
     <Stack.Screen name="AppRoutes" component={StackApp} />
+    <Stack.Screen name="Chat" component={Chat} />
   </Stack.Navigator>
 );

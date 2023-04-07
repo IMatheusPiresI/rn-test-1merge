@@ -20,7 +20,6 @@ export const PhoneRegister: React.FC = () => {
 
   const viewProps: IViewProps = {
     handleToogleShowCountrySearch,
-    handleCloseCountrySearch,
     handleSelectCountry,
     showCountrySearch,
   };

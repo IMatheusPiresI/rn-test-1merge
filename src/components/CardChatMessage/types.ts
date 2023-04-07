@@ -1,8 +1,9 @@
-import { IChat } from '@screens/App/Chats/types';
+import { IChat } from '@screens/App/AllChats/types';
+import { TouchableOpacityProps } from 'react-native';
 
 type IProps = {
   data: IChat;
-};
+} & TouchableOpacityProps;
 
 type IViewProps = {
   data: IChat;
@@ -12,6 +13,6 @@ type IViewProps = {
     time: string;
     imageUrl: string;
   };
-};
+} & TouchableOpacityProps;
 
 export { IProps, IViewProps };

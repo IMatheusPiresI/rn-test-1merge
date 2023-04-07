@@ -16,6 +16,7 @@ type IChat = {
 
 type IViewProps = {
   chats: IChat[];
+  handleOpenChat: (chat: IChat) => void;
 };
 
 export { IViewProps, IChat };

@@ -1,12 +1,14 @@
+import { IStory } from '../types';
+
 type IProps = {
-  name: string;
-  imageUrl: string;
+  story: IStory;
 };
 
 type IViewProps = {
   firstName: string;
   secondName: string;
   imageUrl: string;
+  isCurrentUser: boolean;
 };
 
 export { IProps, IViewProps };

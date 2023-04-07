@@ -5,7 +5,7 @@ import { CardChatMessage } from '@components/CardChatMessage';
 import { StyleSheet } from 'react-native';
 import { IViewProps } from './types';
 
-const ChatsView: React.FC<IViewProps> = ({ chats }) => (
+const AllChatsView: React.FC<IViewProps> = ({ chats, handleOpenChat }) => (
   <VStack flex={1} bgColor="#F7F7F7" py="statusBarHeight16" px="5">
     <Box>
       <HeaderChat />
@@ -14,7 +14,9 @@ const ChatsView: React.FC<IViewProps> = ({ chats }) => (
       <FlatList
         data={chats}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <CardChatMessage data={item} />}
+        renderItem={({ item }) => (
+          <CardChatMessage data={item} onPress={() => handleOpenChat(item)} />
+        )}
         showsVerticalScrollIndicator={false}
         ItemSeparatorComponent={() => <Box h={4} />}
         contentContainerStyle={styles.list}
@@ -23,7 +25,7 @@ const ChatsView: React.FC<IViewProps> = ({ chats }) => (
   </VStack>
 );
 
-export default ChatsView;
+export default AllChatsView;
 
 const styles = StyleSheet.create({
   list: {
