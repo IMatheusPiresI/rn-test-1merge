@@ -23,6 +23,7 @@ export const MyTabBar: React.FC<IProps> = ({ state, navigation }) => (
       const isFocused = state.index === index;
 
       const onPress = () => {
+        if (route.name === 'Settings') return;
         const event = navigation.emit({
           type: 'tabPress',
           target: route.key,

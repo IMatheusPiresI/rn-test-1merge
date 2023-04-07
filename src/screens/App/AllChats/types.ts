@@ -1,9 +1,7 @@
-import { ImageSourcePropType } from 'react-native';
-
 type IChat = {
   id: string;
   nameContact: string;
-  photoContact: ImageSourcePropType;
+  photoContact: string;
   online: boolean;
   newMessages: number;
   messages: {

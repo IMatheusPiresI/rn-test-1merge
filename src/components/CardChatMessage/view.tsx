@@ -1,7 +1,6 @@
 import { Box, HStack, Image, Text, VStack } from 'native-base';
 import React from 'react';
 import { IViewProps } from './types';
-import ProfilePhoto from '@assets/images/profilephoto.jpeg';
 import { TouchableOpacity } from 'react-native';
 
 const CardChatMessageView: React.FC<IViewProps> = ({
@@ -31,7 +30,9 @@ const CardChatMessageView: React.FC<IViewProps> = ({
       <HStack py={2} px={6} bgColor="white" borderRadius={4} flexDir="row">
         <Box>
           <Image
-            source={ProfilePhoto}
+            source={{
+              uri: data.photoContact,
+            }}
             alt="Image"
             w={55}
             h={55}
@@ -51,7 +52,9 @@ const CardChatMessageView: React.FC<IViewProps> = ({
           <Text color="black" fontWeight="bold" mt={2}>
             {data.nameContact}
           </Text>
-          <Text color="#A09F9F">{lastMessage.text}</Text>
+          <Text color="#A09F9F" numberOfLines={1}>
+            {lastMessage.text}
+          </Text>
         </VStack>
         <VStack alignItems="flex-end">
           <Text color="#A09F9F">{lastMessage.time}</Text>
