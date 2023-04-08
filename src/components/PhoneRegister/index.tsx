@@ -8,7 +8,7 @@ export const PhoneRegister: React.FC = () => {
   const [showCountrySearch, setShowCountrySearch] = useState<boolean>(false);
 
   const handleToogleShowCountrySearch = () => {
-    setShowCountrySearch((prevState) => !prevState);
+    setShowCountrySearch(!showCountrySearch);
   };
 
   const handleCloseCountrySearch = () => {

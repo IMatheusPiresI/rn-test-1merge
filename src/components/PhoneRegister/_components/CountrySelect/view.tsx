@@ -1,9 +1,9 @@
 import React, { createElement } from 'react';
-import { Box, HStack, Input, ScrollView, Text, VStack } from 'native-base';
+import { Box, HStack, Input, Text, VStack } from 'native-base';
 import { IViewProps } from './types';
 
 import BrazilFlagSVG from '@assets/svg/brazil-flag.svg';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { FlatList } from 'react-native-gesture-handler';
 
@@ -97,37 +97,23 @@ const CountrySelectView: React.FC<IViewProps> = ({ handleSelect }) => (
       </Box>
     </Box>
     <VStack flex={1} mt={3}>
-      <ScrollView horizontal={true} contentContainerStyle={styles.container}>
-        <FlatList
-          data={mockCountry}
-          keyExtractor={(item) => item.id}
-          nestedScrollEnabled
-          renderItem={({ item }) => (
-            <TouchableOpacity activeOpacity={0.8} onPress={handleSelect}>
-              <HStack alignItems={'center'} w="full" flex={1}>
-                <Box>
-                  {createElement(item.image, { width: 24, height: 16 })}
-                </Box>
-                <Text ml={2} fontWeight={'bold'} fontSize={10}>
-                  + {item.prefixe} - {item.country}
-                </Text>
-              </HStack>
-            </TouchableOpacity>
-          )}
-          ItemSeparatorComponent={() => <Box height={2} />}
-        />
-      </ScrollView>
+      <FlatList
+        data={mockCountry}
+        keyExtractor={(item) => item.id}
+        nestedScrollEnabled
+        renderItem={({ item }) => (
+          <TouchableOpacity activeOpacity={0.8} onPress={handleSelect}>
+            <HStack alignItems={'center'} w="full" flex={1}>
+              <Box>{createElement(item.image, { width: 24, height: 16 })}</Box>
+              <Text ml={2} fontWeight={'bold'} fontSize={10}>
+                + {item.prefixe} - {item.country}
+              </Text>
+            </HStack>
+          </TouchableOpacity>
+        )}
+        ItemSeparatorComponent={() => <Box height={2} />}
+      />
     </VStack>
   </Box>
 );
 export default CountrySelectView;
-
-const styles = StyleSheet.create({
-  boxButtonCountry: {
-    width: 55,
-    height: 55,
-  },
-  container: {
-    width: '100%',
-  },
-});

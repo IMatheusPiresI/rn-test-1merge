@@ -20,6 +20,8 @@ export default {
   screenHeight70: height * 0.7,
   screenHeight60: height * 0.6,
   screenHeight50: height * 0.5,
+  screenHeight40: height * 0.4,
+  screenHeight30: height * 0.3,
   bottomSpace: isIos ? getBottomSpace() : 0,
   bottomSpace8: isIos ? getBottomSpace() : 8,
   bottomSpace16: isIos ? getBottomSpace() : 16,
