@@ -16,52 +16,54 @@ export const OnboardingView: React.FC<IViewProps> = ({
     <ImageBackground source={BackgroundPNG} style={styles.containerBackground}>
       <VStack
         width="100%"
-        height="60%"
         bgColor="transparent"
         pt="statusBarHeight"
         flex={1}
         px={4}>
-        <Box alignItems={'center'} justifyContent={'center'} mt={6}>
+        <Box alignItems={'center'} justifyContent={'center'} mt={4}>
           <Image source={AngelLogoPNG} alt="Angel Logo" w={82} h={82} />
         </Box>
-        <Box alignItems={'center'} justifyContent={'center'}>
+        <Box alignItems={'center'} flex={1}>
           <Image
             source={PeoplesPNG}
             alt="Angel Logo"
             w={'screenWidth'}
-            h={350}
+            h={'screenHeight50'}
             resizeMode="contain"
           />
-        </Box>
-        <Box w="full" mt="4">
-          <Text
-            textAlign={'center'}
-            fontWeight="bold"
-            fontSize={16}
-            lineHeight={20}>
-            Investimos em pessoas,{'\n'} transformamos vidas, realizamos{'\n'}
-            sonhos!
-          </Text>
-        </Box>
-        <Box w="full" mt="2" mb="4">
-          <Text textAlign={'center'} fontSize={12} color={'#000000'}>
-            Investimos em pessoas, transformamos vidas,{'\n'} realizamos sonhos!
-          </Text>
-        </Box>
-        <Box w="full" alignItems="center">
-          <TouchableOpacity
-            style={styles.button}
-            activeOpacity={0.7}
-            onPress={handleGoToVerifySMS}>
-            <Text color="#FFFFFF" fontSize={16}>
-              Iniciar
+          <Box w="full" mt="2">
+            <Text
+              textAlign={'center'}
+              fontWeight="bold"
+              fontSize={16}
+              lineHeight={20}>
+              Investimos em pessoas,{'\n'} transformamos vidas, realizamos{'\n'}
+              sonhos!
             </Text>
-          </TouchableOpacity>
-        </Box>
-        <Box flex={1} justifyContent="flex-end" pb={'bottomSpace16'}>
-          <PoweredByIvy />
+          </Box>
+          <Box w="full" mt="2" mb="4">
+            <Text textAlign={'center'} fontSize={12} color={'#000000'}>
+              Investimos em pessoas, transformamos vidas,{'\n'} realizamos
+              sonhos!
+            </Text>
+          </Box>
         </Box>
       </VStack>
+      <Box
+        justifyContent="flex-end"
+        pb={'bottomSpace16'}
+        mt={2}
+        alignItems={'center'}>
+        <TouchableOpacity
+          style={styles.button}
+          activeOpacity={0.7}
+          onPress={handleGoToVerifySMS}>
+          <Text color="#FFFFFF" fontSize={16}>
+            Iniciar
+          </Text>
+        </TouchableOpacity>
+        <PoweredByIvy />
+      </Box>
     </ImageBackground>
   </VStack>
 );
@@ -80,5 +82,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 500,
+    marginBottom: 8,
   },
 });
