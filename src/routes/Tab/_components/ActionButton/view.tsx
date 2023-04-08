@@ -9,17 +9,23 @@ const ActionButtonView: React.FC<IViewProps> = () => (
     <Box
       width={65}
       height={65}
-      overflow="hidden"
-      bgColor={'#703EFE'}
       borderRadius={'full'}
       alignItems="center"
       justifyContent="center"
+      overflow={'hidden'}
       position="absolute"
       top="-30"
       zIndex={100}
       style={style.shadowButton}>
-      <TouchableOpacity style={style.button} activeOpacity={0.7}>
-        <MaterialIcons name="add" size={24} color="#fff" />
+      <TouchableOpacity activeOpacity={0.8}>
+        <Box
+          width={65}
+          height={65}
+          bgColor={'#703EFE'}
+          alignItems="center"
+          justifyContent="center">
+          <MaterialIcons name="add" size={24} color="#fff" />
+        </Box>
       </TouchableOpacity>
     </Box>
   </VStack>
@@ -28,12 +34,6 @@ const ActionButtonView: React.FC<IViewProps> = () => (
 export default ActionButtonView;
 
 const style = StyleSheet.create({
-  button: {
-    width: '100%',
-    height: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   shadowButton: {
     elevation: 8,
     shadowColor: '#703EFE',

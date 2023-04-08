@@ -3,7 +3,7 @@ import { Box, HStack, Input, ScrollView, Text, VStack } from 'native-base';
 import { IViewProps } from './types';
 
 import BrazilFlagSVG from '@assets/svg/brazil-flag.svg';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { FlatList } from 'react-native-gesture-handler';
 
@@ -70,7 +70,7 @@ const mockCountry = [
   },
 ];
 
-const CountrySelectView: React.FC<IViewProps> = () => (
+const CountrySelectView: React.FC<IViewProps> = ({ handleSelect }) => (
   <Box
     w={'full'}
     h={240}
@@ -103,12 +103,16 @@ const CountrySelectView: React.FC<IViewProps> = () => (
           keyExtractor={(item) => item.id}
           nestedScrollEnabled
           renderItem={({ item }) => (
-            <HStack alignItems={'center'} w="full" flex={1}>
-              <Box>{createElement(item.image, { width: 24, height: 16 })}</Box>
-              <Text ml={2} fontWeight={'bold'} fontSize={10}>
-                + {item.prefixe} - {item.country}
-              </Text>
-            </HStack>
+            <TouchableOpacity activeOpacity={0.8} onPress={handleSelect}>
+              <HStack alignItems={'center'} w="full" flex={1}>
+                <Box>
+                  {createElement(item.image, { width: 24, height: 16 })}
+                </Box>
+                <Text ml={2} fontWeight={'bold'} fontSize={10}>
+                  + {item.prefixe} - {item.country}
+                </Text>
+              </HStack>
+            </TouchableOpacity>
           )}
           ItemSeparatorComponent={() => <Box height={2} />}
         />

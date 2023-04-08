@@ -8,7 +8,7 @@ export declare global {
       Onboarding: undefined;
       Home: undefined;
       VerifySMS: undefined;
-      AllChats: undefined;
+      Chats: undefined;
       Chat: { chat: IChat };
     }
   }

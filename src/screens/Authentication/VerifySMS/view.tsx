@@ -11,6 +11,7 @@ import WomanPNG from '@assets/images/woman-sms.png';
 import { PoweredByIvy } from '@components/PoweredByIvy';
 import { PhoneRegister } from '@components/PhoneRegister';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { KeyboardDismiss } from '@components/KeyboardDismiss';
 
 export const VerifySMSView: React.FC<IViewProps> = ({ handleConfirmPhone }) => (
   <VStack flex={1}>
@@ -19,46 +20,50 @@ export const VerifySMSView: React.FC<IViewProps> = ({ handleConfirmPhone }) => (
         showsVerticalScrollIndicator={false}
         nestedScrollEnabled={true}
         keyboardShouldPersistTaps="always">
-        <VStack
-          width="100%"
-          height="60%"
-          bgColor="transparent"
-          pt="statusBarHeight"
-          flex={1}
-          px={12}>
-          <Box alignItems={'center'} justifyContent={'center'} mt={6}>
-            <Image source={AngelLogoPNG} alt="Angel Logo" w={124} h={124} />
-          </Box>
+        <KeyboardDismiss>
           <VStack flex={1}>
-            <Box
-              w="full"
-              alignItems={'center'}
-              justifyContent={'center'}
-              mt={4}>
-              <Image
-                source={WomanPNG}
-                alt="Angel Logo"
-                w={'screenWidth'}
-                h={354}
-                resizeMode="contain"
-              />
-            </Box>
-            <Box mt={4} w={'full'}>
-              <PhoneRegister />
+            <VStack
+              width="100%"
+              height="60%"
+              bgColor="transparent"
+              pt="statusBarHeight"
+              flex={1}
+              px={12}>
+              <Box alignItems={'center'} justifyContent={'center'} mt={6}>
+                <Image source={AngelLogoPNG} alt="Angel Logo" w={124} h={124} />
+              </Box>
+              <VStack flex={1}>
+                <Box
+                  w="full"
+                  alignItems={'center'}
+                  justifyContent={'center'}
+                  mt={4}>
+                  <Image
+                    source={WomanPNG}
+                    alt="Angel Logo"
+                    w={'screenWidth'}
+                    h={354}
+                    resizeMode="contain"
+                  />
+                </Box>
+                <Box mt={4} w={'full'}>
+                  <PhoneRegister />
+                </Box>
+              </VStack>
+            </VStack>
+
+            <Box mt={4} alignItems={'center'}>
+              <TouchableOpacity
+                style={styles.button}
+                activeOpacity={0.7}
+                onPress={handleConfirmPhone}>
+                <Text color="#FFFFFF" fontSize={16}>
+                  Iniciar
+                </Text>
+              </TouchableOpacity>
             </Box>
           </VStack>
-        </VStack>
-
-        <Box mt={4} alignItems={'center'}>
-          <TouchableOpacity
-            style={styles.button}
-            activeOpacity={0.7}
-            onPress={handleConfirmPhone}>
-            <Text color="#FFFFFF" fontSize={16}>
-              Iniciar
-            </Text>
-          </TouchableOpacity>
-        </Box>
+        </KeyboardDismiss>
       </KeyboardAwareScrollView>
       <Box justifyContent="flex-end" pb={'bottomSpace16'} mt={2}>
         <PoweredByIvy />

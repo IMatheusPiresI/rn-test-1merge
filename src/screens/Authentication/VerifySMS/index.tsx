@@ -11,6 +11,7 @@ export const VerifySMS: React.FC = () => {
   const handleConfirmPhone = () => {
     navigation.navigate('AppRoutes');
   };
+
   const viewProps: IViewProps = {
     handleConfirmPhone,
   };

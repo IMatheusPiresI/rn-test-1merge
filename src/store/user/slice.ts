@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { IChangeCommunityId } from './types';
+import { IChangeCommunity } from './types';
 
 const user = createSlice({
   name: 'user',
@@ -11,15 +11,15 @@ const user = createSlice({
     },
   },
   reducers: {
-    userChangeSelectedCommunityId(
+    userChangeSelectedCommunity(
       state,
-      action: PayloadAction<IChangeCommunityId>,
+      action: PayloadAction<IChangeCommunity>,
     ) {
-      state.selectedCommunity.id = action.payload.id;
+      state.selectedCommunity = action.payload;
     },
   },
 });
 
-export const { userChangeSelectedCommunityId } = user.actions;
+export const { userChangeSelectedCommunity } = user.actions;
 
 export default user.reducer;

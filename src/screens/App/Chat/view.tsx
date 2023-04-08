@@ -6,9 +6,11 @@ import { StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { KeyboardDismiss } from '@components/KeyboardDismiss';
 import ChatMessage from '@components/ChatMessage';
 import uuid from 'react-native-uuid';
+import { TipCommunitySelected } from '@components/TipCommunitySelected';
 
 const ChatView: React.FC<IViewProps> = ({ chat, handleGoBack }) => (
   <VStack flex={1} bgColor="#F7F7F7">
+    <TipCommunitySelected />
     <HStack
       pt="statusBarHeight8"
       pb="4"

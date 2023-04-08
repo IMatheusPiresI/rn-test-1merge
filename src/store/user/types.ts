@@ -1,5 +1,6 @@
-type IChangeCommunityId = {
+type IChangeCommunity = {
   id: string;
+  name: string;
 };
 
-export { IChangeCommunityId };
+export { IChangeCommunity };

@@ -4,6 +4,7 @@ import { IViewProps } from './types';
 import View from './view';
 
 export const PhoneRegister: React.FC = () => {
+  const [phone, setPhone] = useState<string>('');
   const [showCountrySearch, setShowCountrySearch] = useState<boolean>(false);
 
   const handleToogleShowCountrySearch = () => {
@@ -21,6 +22,8 @@ export const PhoneRegister: React.FC = () => {
   const viewProps: IViewProps = {
     handleToogleShowCountrySearch,
     handleSelectCountry,
+    setPhone,
+    phone,
     showCountrySearch,
   };
 

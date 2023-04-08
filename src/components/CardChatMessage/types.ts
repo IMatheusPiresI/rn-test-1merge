@@ -13,6 +13,7 @@ type IViewProps = {
     time: string;
     imageUrl: string;
   };
+  showIcon: boolean;
 } & TouchableOpacityProps;
 
 export { IProps, IViewProps };

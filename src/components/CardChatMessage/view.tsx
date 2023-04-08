@@ -2,10 +2,12 @@ import { Box, HStack, Image, Text, VStack } from 'native-base';
 import React from 'react';
 import { IViewProps } from './types';
 import { TouchableOpacity } from 'react-native';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 const CardChatMessageView: React.FC<IViewProps> = ({
   data,
   lastMessage,
+  showIcon,
   ...rest
 }) => {
   const renderQuantityMessages = () => {
@@ -22,6 +24,16 @@ const CardChatMessageView: React.FC<IViewProps> = ({
         <Text color="white" fontSize={14} textAlign="center">
           {data.newMessages}
         </Text>
+      </Box>
+    );
+  };
+
+  const renderIconView = () => {
+    if (!showIcon) return;
+
+    return (
+      <Box mr={1}>
+        <MaterialIcons name="done-all" size={16} color="#A09F9F" />
       </Box>
     );
   };
@@ -44,7 +56,7 @@ const CardChatMessageView: React.FC<IViewProps> = ({
             right={-2}
             w={4}
             h={4}
-            bgColor="#36C287"
+            bgColor={data.online ? '#36C287' : '#A09F9F'}
             borderRadius="full"
           />
         </Box>
@@ -52,9 +64,12 @@ const CardChatMessageView: React.FC<IViewProps> = ({
           <Text color="black" fontWeight="bold" mt={2}>
             {data.nameContact}
           </Text>
-          <Text color="#A09F9F" numberOfLines={1}>
-            {lastMessage.text}
-          </Text>
+          <HStack alignItems={'center'}>
+            {renderIconView()}
+            <Text color="#A09F9F" numberOfLines={1}>
+              {lastMessage.text}
+            </Text>
+          </HStack>
         </VStack>
         <VStack alignItems="flex-end">
           <Text color="#A09F9F">{lastMessage.time}</Text>

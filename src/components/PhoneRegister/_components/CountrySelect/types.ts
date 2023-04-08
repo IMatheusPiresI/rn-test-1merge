@@ -2,6 +2,6 @@ type IProps = {
   handleSelect: () => void;
 };
 
-type IViewProps = {};
+type IViewProps = { handleSelect: () => void };
 
 export { IProps, IViewProps };
