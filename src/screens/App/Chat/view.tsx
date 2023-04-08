@@ -17,7 +17,7 @@ import { TipCommunitySelected } from '@components/TipCommunitySelected';
 const ChatView: React.FC<IViewProps> = ({ chat, handleGoBack }) => (
   <KeyboardAvoidingView
     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-    style={{ flex: 1 }}>
+    style={styles.container}>
     <KeyboardDismiss>
       <VStack flex={1} bgColor="#F7F7F7">
         <TipCommunitySelected />
@@ -105,6 +105,9 @@ const ChatView: React.FC<IViewProps> = ({ chat, handleGoBack }) => (
 export default ChatView;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   inputChat: {
     flex: 1,
     backgroundColor: '#fff',
