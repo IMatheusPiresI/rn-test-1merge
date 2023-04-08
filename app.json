@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "ivycommunity",
-    "slug": "ivycommunity",
+    "name": "Angel Investor",
+    "slug": "angel-investor",
+    "sdkVersion": "48.0.0",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,9 +12,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },

@@ -17,7 +17,7 @@ const ActionButtonView: React.FC<IViewProps> = () => (
       top="-30"
       zIndex={100}
       style={style.shadowButton}>
-      <TouchableOpacity activeOpacity={0.8}>
+      <TouchableOpacity activeOpacity={0.9}>
         <Box
           width={65}
           height={65}

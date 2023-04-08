@@ -27,6 +27,7 @@ const CommunityView: React.FC<IViewProps> = ({ handleSelectCommunity }) => (
           )}
           ItemSeparatorComponent={() => <Box h={4} />}
           contentContainerStyle={styles.list}
+          overScrollMode="never"
         />
       </VStack>
     </VStack>

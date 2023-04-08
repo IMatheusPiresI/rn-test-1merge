@@ -19,6 +19,7 @@ export const PostsView: React.FC<IViewProps> = ({ communityPosts }) => (
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <Post data={item} />}
         ItemSeparatorComponent={() => <Box h={4} />}
+        overScrollMode="never"
         contentContainerStyle={styles.list}
       />
     </VStack>
