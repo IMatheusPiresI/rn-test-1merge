@@ -18,75 +18,69 @@ const ChatView: React.FC<IViewProps> = ({ chat, handleGoBack }) => (
   <KeyboardAvoidingView
     behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     style={styles.container}>
-    <KeyboardDismiss>
-      <VStack flex={1} bgColor="#F7F7F7">
-        <TipCommunitySelected />
-        <HStack
-          pt="statusBarHeight8"
-          pb="4"
-          bgColor={'#fff'}
-          px="6"
-          alignItems={'center'}>
-          <TouchableOpacity onPress={handleGoBack}>
-            <MaterialIcons name="west" size={24} color="#000" />
-          </TouchableOpacity>
-          <HStack alignItems={'center'} ml="4" flex={1}>
-            <Image
-              source={{
-                uri: chat.photoContact,
-              }}
-              alt="contact photo"
-              w={10}
-              h={10}
-              borderRadius={'full'}
-            />
-            <Box justifyContent={'center'}>
-              <Text
-                ml={2}
-                fontWeight={'bold'}
-                fontSize={14}
-                color="#000"
-                lineHeight={18}>
-                {chat.nameContact}
-              </Text>
-              <Text
-                ml={2}
-                fontSize={12}
-                color={chat.online ? '#36C287' : '#A09F9F'}>
-                {chat.online ? 'online' : 'offline'}
-              </Text>
-            </Box>
-          </HStack>
-          <HStack space={4}>
-            <TouchableOpacity>
-              <MaterialIcons name="videocam" size={28} color="#A09F9F" />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <MaterialIcons name="call" size={28} color="#A09F9F" />
-            </TouchableOpacity>
-          </HStack>
+    <VStack flex={1} bgColor="#F7F7F7">
+      <TipCommunitySelected />
+      <HStack
+        pt="statusBarHeight8"
+        pb="4"
+        bgColor={'#fff'}
+        px="6"
+        alignItems={'center'}>
+        <TouchableOpacity onPress={handleGoBack}>
+          <MaterialIcons name="west" size={24} color="#000" />
+        </TouchableOpacity>
+        <HStack alignItems={'center'} ml="4" flex={1}>
+          <Image
+            source={{
+              uri: chat.photoContact,
+            }}
+            alt="contact photo"
+            w={10}
+            h={10}
+            borderRadius={'full'}
+          />
+          <Box justifyContent={'center'}>
+            <Text
+              ml={2}
+              fontWeight={'bold'}
+              fontSize={14}
+              color="#000"
+              lineHeight={18}>
+              {chat.nameContact}
+            </Text>
+            <Text
+              ml={2}
+              fontSize={12}
+              color={chat.online ? '#36C287' : '#A09F9F'}>
+              {chat.online ? 'online' : 'offline'}
+            </Text>
+          </Box>
         </HStack>
-        <VStack flex={1}>
-          <KeyboardDismiss>
-            <FlatList
-              data={chat.messages}
-              inverted={true}
-              keyExtractor={() => String(uuid.v4())}
-              renderItem={({ item }) => <ChatMessage message={item} />}
-              scrollEventThrottle={16}
-              showsVerticalScrollIndicator={false}
-              overScrollMode="never"
-              contentContainerStyle={[styles.revertList, styles.listMessages]}
-            />
-          </KeyboardDismiss>
-        </VStack>
-        <HStack
-          w="full"
-          h="20"
-          bgColor={'#fff'}
-          px="10"
-          py="4"
-          alignItems={'center'}>
+        <HStack space={4}>
+          <TouchableOpacity>
+            <MaterialIcons name="videocam" size={28} color="#A09F9F" />
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <MaterialIcons name="call" size={28} color="#A09F9F" />
+          </TouchableOpacity>
+        </HStack>
+      </HStack>
+      <VStack flex={1}>
+        <KeyboardDismiss>
+          <FlatList
+            data={chat.messages}
+            inverted={true}
+            keyExtractor={() => String(uuid.v4())}
+            renderItem={({ item }) => <ChatMessage message={item} />}
+            scrollEventThrottle={16}
+            showsVerticalScrollIndicator={false}
+            overScrollMode="never"
+            contentContainerStyle={[styles.revertList, styles.listMessages]}
+          />
+        </KeyboardDismiss>
+      </VStack>
+      <Box w={'full'} bgColor={'#fff'} pb="bottomSpace">
+        <HStack w="full" px="10" py="4" alignItems={'center'}>
           <TextInput placeholder="Type here..." style={styles.inputChat} />
           <HStack space={'2'} ml="2">
             <TouchableOpacity>
@@ -97,8 +91,8 @@ const ChatView: React.FC<IViewProps> = ({ chat, handleGoBack }) => (
             </TouchableOpacity>
           </HStack>
         </HStack>
-      </VStack>
-    </KeyboardDismiss>
+      </Box>
+    </VStack>
   </KeyboardAvoidingView>
 );
 
