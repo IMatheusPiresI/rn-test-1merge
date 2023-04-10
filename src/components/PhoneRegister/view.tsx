@@ -43,6 +43,7 @@ const PhoneRegisterView: React.FC<IViewProps> = ({
           placeholderTextColor="#A2A2A2"
           mask={Masks.BRL_PHONE}
           style={styles.inputMask}
+          keyboardType="numeric"
         />
       </Box>
     </HStack>
