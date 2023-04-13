@@ -12,14 +12,9 @@ import { PoweredByIvy } from '@components/PoweredByIvy';
 export const OnboardingView: React.FC<IViewProps> = ({
   handleGoToVerifySMS,
 }) => (
-  <VStack bgColor="#fff" flex={1}>
+  <VStack bgColor="#fff" flex={1} pt="statusBarHeight">
     <ImageBackground source={BackgroundPNG} style={styles.containerBackground}>
-      <VStack
-        width="100%"
-        bgColor="transparent"
-        pt="statusBarHeight"
-        flex={1}
-        px={4}>
+      <VStack width="100%" bgColor="transparent" pt="4" flex={1} px={4}>
         <Box alignItems={'center'} justifyContent={'center'} mt={4}>
           <Image source={AngelLogoPNG} alt="Angel Logo" w={82} h={82} />
         </Box>

@@ -9,7 +9,9 @@ import { StyleSheet } from 'react-native';
 export const PostsView: React.FC<IViewProps> = ({ communityPosts }) => (
   <VStack bgColor="#F7F7F7" flex={1}>
     <HStack pt="statusBarHeight16" pb="2" bgColor={'#fff'} pl="12">
-      <StoryList />
+      <HStack bgColor={'#fff'} mt="iosSpace16">
+        <StoryList />
+      </HStack>
     </HStack>
     <VStack flex={1} bgColor="transparent" mt="6">
       <FlatList

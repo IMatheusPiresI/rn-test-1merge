@@ -13,7 +13,7 @@ const CommunityView: React.FC<IViewProps> = ({ handleSelectCommunity }) => (
     <VStack flex={1}>
       <TipCommunitySelected />
       <VStack flex={1} bgColor={'#F7F7F7'} py="statusBarHeight16" px={5}>
-        <Box h={16} w="full">
+        <Box h={16} w="full" mt="iosSpace16">
           <InputSearch placeholder="Pesquise por comunidade..." />
         </Box>
         <VStack flex={1} mt={4}>

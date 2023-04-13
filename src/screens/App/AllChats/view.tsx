@@ -12,7 +12,7 @@ const AllChatsView: React.FC<IViewProps> = ({ chats, handleOpenChat }) => (
     <VStack flex={1}>
       <TipCommunitySelected />
       <VStack flex={1} bgColor="#F7F7F7" py="statusBarHeight16" px="5">
-        <Box>
+        <Box mt={'iosSpace16'}>
           <HeaderChat />
         </Box>
         <VStack flex={1} mt={4}>

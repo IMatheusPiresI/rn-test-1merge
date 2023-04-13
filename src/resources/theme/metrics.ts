@@ -30,4 +30,11 @@ export default {
   statusBarHeight12: getStatusBarHeight() + 12,
   statusBarHeight16: getStatusBarHeight() + 16,
   statusBarHeight20: getStatusBarHeight() + 20,
+  iosSpace: isIos ? 2 : 0,
+  iosSpace4: isIos ? 4 : 0,
+  iosSpace6: isIos ? 6 : 0,
+  iosSpace8: isIos ? 8 : 0,
+  iosSpace12: isIos ? 12 : 0,
+  iosSpace16: isIos ? 16 : 0,
+  iosSpace24: isIos ? 24 : 0,
 };
