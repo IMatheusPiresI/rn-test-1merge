@@ -7,7 +7,7 @@ const TipCommunitySelectedView: React.FC<IViewProps> = ({ name }) => (
   <Box
     w={'48'}
     position={'absolute'}
-    top={40}
+    top={'56'}
     left={-87}
     zIndex={999}
     style={styles.tip}

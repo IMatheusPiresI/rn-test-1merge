@@ -20,51 +20,48 @@ const ChatView: React.FC<IViewProps> = ({ chat, handleGoBack }) => (
     style={styles.container}>
     <VStack flex={1} bgColor="#F7F7F7">
       <TipCommunitySelected />
-      <HStack
-        pt="statusBarHeight8"
-        pb="4"
-        bgColor={'#fff'}
-        px="6"
-        alignItems={'center'}>
-        <TouchableOpacity onPress={handleGoBack}>
-          <MaterialIcons name="west" size={24} color="#000" />
-        </TouchableOpacity>
-        <HStack alignItems={'center'} ml="4" flex={1}>
-          <Image
-            source={{
-              uri: chat.photoContact,
-            }}
-            alt="contact photo"
-            w={10}
-            h={10}
-            borderRadius={'full'}
-          />
-          <Box justifyContent={'center'}>
-            <Text
-              ml={2}
-              fontWeight={'bold'}
-              fontSize={14}
-              color="#000"
-              lineHeight={18}>
-              {chat.nameContact}
-            </Text>
-            <Text
-              ml={2}
-              fontSize={12}
-              color={chat.online ? '#36C287' : '#A09F9F'}>
-              {chat.online ? 'online' : 'offline'}
-            </Text>
-          </Box>
-        </HStack>
-        <HStack space={4}>
-          <TouchableOpacity>
-            <MaterialIcons name="videocam" size={28} color="#A09F9F" />
+      <Box bgColor={'#fff'} pt="statusBarHeight16">
+        <HStack pt="4" pb="4" bgColor={'#fff'} px="6" alignItems={'center'}>
+          <TouchableOpacity onPress={handleGoBack}>
+            <MaterialIcons name="west" size={24} color="#000" />
           </TouchableOpacity>
-          <TouchableOpacity>
-            <MaterialIcons name="call" size={28} color="#A09F9F" />
-          </TouchableOpacity>
+          <HStack alignItems={'center'} ml="4" flex={1}>
+            <Image
+              source={{
+                uri: chat.photoContact,
+              }}
+              alt="contact photo"
+              w={10}
+              h={10}
+              borderRadius={'full'}
+            />
+            <Box justifyContent={'center'}>
+              <Text
+                ml={2}
+                fontWeight={'bold'}
+                fontSize={14}
+                color="#000"
+                lineHeight={18}>
+                {chat.nameContact}
+              </Text>
+              <Text
+                ml={2}
+                fontSize={12}
+                color={chat.online ? '#36C287' : '#A09F9F'}>
+                {chat.online ? 'online' : 'offline'}
+              </Text>
+            </Box>
+          </HStack>
+          <HStack space={4}>
+            <TouchableOpacity>
+              <MaterialIcons name="videocam" size={28} color="#A09F9F" />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <MaterialIcons name="call" size={28} color="#A09F9F" />
+            </TouchableOpacity>
+          </HStack>
         </HStack>
-      </HStack>
+      </Box>
       <VStack flex={1}>
         <KeyboardDismiss>
           <FlatList
