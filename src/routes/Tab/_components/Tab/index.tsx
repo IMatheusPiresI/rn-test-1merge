@@ -9,10 +9,10 @@ export const TabCustom: React.FC<IProps> = ({
   ...rest
 }) => {
   const iconsNames: IIconsNames = {
-    Community: 'device-hub',
-    Chats: 'forum',
-    Posts: 'home',
+    Home: 'home',
+    Saved: 'favorite-border',
     Settings: 'settings',
+    Profile: 'person-outline',
   };
 
   const iconName: IMaterialIconsType =
@@ -21,6 +21,7 @@ export const TabCustom: React.FC<IProps> = ({
   const viewProps: IViewProps = {
     iconName,
     isFocused,
+    routeName,
     ...rest,
   };
 

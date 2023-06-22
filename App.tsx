@@ -1,21 +1,45 @@
+import React from 'react';
+
 import { theme } from '@resources/theme';
 import { AppRoutes } from '@routes/index';
-import { store } from '@store/index';
 import { NativeBaseProvider, StatusBar } from 'native-base';
+import { useFonts } from 'expo-font';
+import {
+  Poppins_400Regular,
+  Poppins_500Medium,
+  Poppins_700Bold,
+  Poppins_800ExtraBold,
+} from '@expo-google-fonts/poppins';
+import {
+  Roboto_400Regular,
+  Roboto_500Medium,
+  Roboto_700Bold,
+} from '@expo-google-fonts/roboto';
 import 'react-native-gesture-handler';
-import { Provider } from 'react-redux';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Poppins_400Regular,
+    Poppins_500Medium,
+    Poppins_700Bold,
+    Poppins_800ExtraBold,
+    Roboto_400Regular,
+    Roboto_500Medium,
+    Roboto_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
-    <Provider store={store}>
-      <NativeBaseProvider theme={theme}>
-        <AppRoutes />
-        <StatusBar
-          translucent
-          backgroundColor="transparent"
-          barStyle="dark-content"
-        />
-      </NativeBaseProvider>
-    </Provider>
+    <NativeBaseProvider theme={theme}>
+      <AppRoutes />
+      <StatusBar
+        translucent
+        backgroundColor="transparent"
+        barStyle="dark-content"
+      />
+    </NativeBaseProvider>
   );
 }

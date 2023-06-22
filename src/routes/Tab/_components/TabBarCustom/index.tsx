@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { IProps } from './types';
-import { ActionButton } from '../ActionButton';
 import { TabCustom } from '../Tab';
 import { navigate } from '@routes/RootNavigation';
 import { HStack } from 'native-base';
@@ -9,10 +8,8 @@ import { StyleSheet } from 'react-native';
 export const MyTabBar: React.FC<IProps> = ({ state, navigation }) => (
   <HStack
     flexDir="row"
-    height="20"
+    height="24"
     width="full"
-    borderTopLeftRadius={28}
-    borderTopRightRadius={28}
     backgroundColor="white"
     borderWidth="0"
     borderColor="white"
@@ -23,7 +20,6 @@ export const MyTabBar: React.FC<IProps> = ({ state, navigation }) => (
       const isFocused = state.index === index;
 
       const onPress = () => {
-        if (route.name === 'Settings') return;
         const event = navigation.emit({
           type: 'tabPress',
           target: route.key,
@@ -42,10 +38,6 @@ export const MyTabBar: React.FC<IProps> = ({ state, navigation }) => (
           target: route.key,
         });
       };
-
-      if (route.name === 'Empty') {
-        return <ActionButton key={route.name} />;
-      }
 
       return (
         <TabCustom

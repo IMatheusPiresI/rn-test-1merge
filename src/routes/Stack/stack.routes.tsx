@@ -1,8 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import TabRoutes from '@routes/Tab/tab.routes';
-import Chat from '@screens/App/Chat';
-import Onboarding from '@screens/Authentication/Onboarding';
-import VerifySMS from '@screens/Authentication/VerifySMS';
+import Register from '@screens/Authentication/Register';
+import SignIn from '@screens/Authentication/SignIn';
 
 const Stack = createStackNavigator();
 
@@ -11,8 +10,8 @@ export const StackAuth = () => (
     screenOptions={{
       headerShown: false,
     }}>
-    <Stack.Screen name="Onboarding" component={Onboarding} />
-    <Stack.Screen name="VerifySMS" component={VerifySMS} />
+    <Stack.Screen name="SignIn" component={SignIn} />
+    <Stack.Screen name="Register" component={Register} />
   </Stack.Navigator>
 );
 
@@ -21,7 +20,7 @@ export const StackApp = () => (
     screenOptions={{
       headerShown: false,
     }}>
-    <Stack.Screen name="Home" component={TabRoutes} />
+    <Stack.Screen name="AppRoutes" component={TabRoutes} />
   </Stack.Navigator>
 );
 
@@ -31,7 +30,6 @@ export const StackRoutes = () => (
       headerShown: false,
     }}>
     <Stack.Screen name="Authentication" component={StackAuth} />
-    <Stack.Screen name="AppRoutes" component={StackApp} />
-    <Stack.Screen name="Chat" component={Chat} />
+    <Stack.Screen name="App" component={StackApp} />
   </Stack.Navigator>
 );

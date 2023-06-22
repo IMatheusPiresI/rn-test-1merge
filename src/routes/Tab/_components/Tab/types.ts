@@ -9,15 +9,16 @@ type IProps = {
 type IViewProps = {
   iconName: IMaterialIconsType;
   isFocused: boolean;
+  routeName: string;
 } & TouchableOpacityProps;
 
 type IMaterialIconsType = keyof typeof MaterialIcons.glyphMap;
 
 type IIconsNames = {
-  Community: IMaterialIconsType;
-  Chats: IMaterialIconsType;
-  Posts: IMaterialIconsType;
+  Home: IMaterialIconsType;
+  Saved: IMaterialIconsType;
   Settings: IMaterialIconsType;
+  Profile: IMaterialIconsType;
 };
 
 export { IProps, IViewProps, IMaterialIconsType, IIconsNames };

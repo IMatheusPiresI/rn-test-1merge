@@ -1,15 +1,11 @@
-import { IChat } from '@screens/App/AllChats/types';
-
 export declare global {
   namespace ReactNavigation {
     interface RootParamList {
-      AppRoutes: undefined;
+      App: undefined;
       Authentication: undefined;
-      Onboarding: undefined;
+      SignIn: undefined;
+      Register: undefined;
       Home: undefined;
-      VerifySMS: undefined;
-      Chats: undefined;
-      Chat: { chat: IChat };
     }
   }
 }

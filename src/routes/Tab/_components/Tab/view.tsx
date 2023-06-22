@@ -1,15 +1,31 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { IViewProps } from './types';
+import { Text } from 'native-base';
+import { IconBase } from '@components/IconBase';
 
-const TabView: React.FC<IViewProps> = ({ isFocused, iconName, ...rest }) => (
+const TabView: React.FC<IViewProps> = ({
+  isFocused,
+  iconName,
+  routeName,
+  ...rest
+}) => (
   <TouchableOpacity style={style.button} activeOpacity={1} {...rest}>
-    <MaterialIcons
+    <IconBase
       name={iconName}
-      size={34}
-      color={isFocused ? '#703EFE' : '#A09F9F'}
+      color="#000000"
+      colorFocused="#3EB489"
+      isFocused={isFocused}
     />
+
+    <Text
+      fontSize={12}
+      fontFamily="poppins"
+      fontWeight={'normal'}
+      mt="2"
+      color={isFocused ? '#3EB489' : '#000000'}>
+      {routeName}
+    </Text>
   </TouchableOpacity>
 );
 
