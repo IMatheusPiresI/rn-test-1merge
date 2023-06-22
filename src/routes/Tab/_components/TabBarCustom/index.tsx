@@ -13,8 +13,6 @@ export const MyTabBar: React.FC<IProps> = ({ state, navigation }) => (
     backgroundColor="white"
     borderWidth="0"
     borderColor="white"
-    position={'absolute'}
-    bottom={0}
     style={style.shadow}>
     {state.routes.map((route, index) => {
       const isFocused = state.index === index;

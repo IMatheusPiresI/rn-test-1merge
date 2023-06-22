@@ -9,9 +9,14 @@ const isIos = Platform.OS === 'ios';
 
 export default {
   screenWidth: width,
+  screenWidth75: width * 0.75,
   screenHeight: height,
+  screenHeight30: height * 0.3,
   screenHeight40: height * 0.4,
   screenHeight45: height * 0.45,
+  screenHeight60: height * 0.6,
+  screenHeight65: height * 0.65,
+  screenHeight70: height * 0.7,
   bottomSpace: isIos ? getBottomSpace() : 0,
   bottomSpace8: isIos ? getBottomSpace() : 8,
   bottomSpace16: isIos ? getBottomSpace() : 16,
