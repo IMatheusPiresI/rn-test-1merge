@@ -1,27 +1,22 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Posts from '@screens/App/Posts';
 import { MyTabBar } from './_components/TabBarCustom';
-import AllChats from '@screens/App/AllChats';
-import Community from '@screens/App/Community';
+import Home from '@screens/App/Home';
 
 const Tab = createBottomTabNavigator();
 
 export default function TabRoutes() {
   return (
     <Tab.Navigator
-      initialRouteName="Chats"
+      initialRouteName="Home"
       tabBar={(props) => <MyTabBar {...props} />}
       screenOptions={{
         headerShown: false,
       }}>
-      <Tab.Screen name="Community" component={Community} />
-      <Tab.Screen name="Chats" component={AllChats} />
-      <Tab.Screen name="Empty" component={EmptyComponent} />
-      <Tab.Screen name="Posts" component={Posts} />
-      <Tab.Screen name="Settings" component={Posts} />
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Saved" component={Home} />
+      <Tab.Screen name="Settings" component={Home} />
+      <Tab.Screen name="Profile" component={Home} />
     </Tab.Navigator>
   );
 }
-
-const EmptyComponent: React.FC = () => <React.Fragment />;
