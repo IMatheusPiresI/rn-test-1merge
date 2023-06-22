@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { Platform, StyleSheet, TouchableOpacity } from 'react-native';
 import { IViewProps } from './types';
 import { Text } from 'native-base';
 import { IconBase } from '@components/IconBase';
@@ -23,6 +23,7 @@ const TabView: React.FC<IViewProps> = ({
       fontFamily="poppins"
       fontWeight={'normal'}
       mt="2"
+      mb={Platform.OS === 'ios' ? '2' : 0}
       color={isFocused ? '#3EB489' : '#000000'}>
       {routeName}
     </Text>

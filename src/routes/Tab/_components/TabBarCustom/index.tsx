@@ -4,11 +4,11 @@ import { IProps } from './types';
 import { TabCustom } from '../Tab';
 import { navigate } from '@routes/RootNavigation';
 import { HStack } from 'native-base';
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 export const MyTabBar: React.FC<IProps> = ({ state, navigation }) => (
   <HStack
     flexDir="row"
-    height="24"
+    height={Platform.OS === 'ios' ? '80px' : '72px'}
     width="full"
     backgroundColor="white"
     borderWidth="0"

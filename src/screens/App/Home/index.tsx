@@ -15,10 +15,10 @@ const Home: React.FC = () => (
       bg="#FBFBFB"
       contentContainerStyle={styles.contentScroll}
       showsVerticalScrollIndicator={false}>
-      <Box mt="6" px="4">
+      <Box px="4">
         <Header />
       </Box>
-      <VStack px="4" mt="8">
+      <VStack px="4" mt="4">
         <Text
           fontFamily="poppins"
           fontWeight="normal"

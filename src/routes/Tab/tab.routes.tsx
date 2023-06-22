@@ -15,9 +15,11 @@ export default function TabRoutes() {
         headerShown: false,
       }}>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Saved" component={Home} />
-      <Tab.Screen name="Settings" component={Home} />
+      <Tab.Screen name="Saved" component={EmptyComponent} />
+      <Tab.Screen name="Settings" component={EmptyComponent} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
 }
+
+const EmptyComponent: React.FC = () => <></>;

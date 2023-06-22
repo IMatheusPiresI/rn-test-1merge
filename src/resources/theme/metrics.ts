@@ -12,6 +12,7 @@ export default {
   screenWidth75: width * 0.75,
   screenHeight: height,
   screenHeight30: height * 0.3,
+  screenHeight35: height * 0.35,
   screenHeight40: height * 0.4,
   screenHeight45: height * 0.45,
   screenHeight60: height * 0.6,
