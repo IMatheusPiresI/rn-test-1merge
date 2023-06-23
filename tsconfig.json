@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "es6",
+    "baseUrl": "./src",
+    "paths": {
+      "@src/*": ["./src/*"],
+      "@components/*": ["./components/*"],
+      "@screens/*": ["./screens/*"],
+      "@assets/*": ["./assets/*"],
+      "@resources/*": ["./resources/*"],
+      "@routes/*": ["./routes/*"],
+      "@store/*": ["./store/*"],
+      "@schemas/*": ["./schemas/*"],
+      "@services/*": ["./services/*"],
+      "@mocks/*": ["./mocks/*"],
+      "@database/*": ["./database/*"]
+    }
+  },
+  "extends": "expo/tsconfig.base"
+}
