@@ -1,9 +1,14 @@
 import { NavigationContainer } from '@react-navigation/native';
+import { useAuthContext } from '@resources/hooks/useAuthContext';
 import { navigationRef } from './RootNavigation';
-import { StackRoutes } from './Stack/stack.routes';
+import { StackApp, StackAuth } from './Stack/stack.routes';
 
-export const AppRoutes = () => (
-  <NavigationContainer ref={navigationRef}>
-    <StackRoutes />
-  </NavigationContainer>
-);
+export const AppRoutes = () => {
+  const { user } = useAuthContext();
+
+  return (
+    <NavigationContainer ref={navigationRef}>
+      {user?.email ? <StackApp /> : <StackAuth />}
+    </NavigationContainer>
+  );
+};

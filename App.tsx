@@ -17,6 +17,8 @@ import {
 } from '@expo-google-fonts/roboto';
 import 'react-native-gesture-handler';
 import { RealmProvider } from '@database/schemas/UserSchema';
+import { AuthContextProvider } from '@contexts/authContext';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -34,13 +36,19 @@ export default function App() {
   }
 
   return (
-      <NativeBaseProvider theme={theme}>
-        <AppRoutes />
-        <StatusBar
-          translucent
-          backgroundColor="transparent"
-          barStyle="dark-content"
-        />
-      </NativeBaseProvider>
+    <RealmProvider>
+      <AuthContextProvider>
+        <NativeBaseProvider theme={theme}>
+          <SafeAreaProvider>
+            <AppRoutes />
+            <StatusBar
+              translucent
+              backgroundColor="transparent"
+              barStyle="dark-content"
+            />
+          </SafeAreaProvider>
+        </NativeBaseProvider>
+      </AuthContextProvider>
+    </RealmProvider>
   );
 }

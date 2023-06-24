@@ -12,7 +12,8 @@ export const InputSearch: React.FC = () => (
     borderColor="#C4C4C4"
     borderRadius="10"
     px="3"
-    h={[60]}>
+    h={[60]}
+  >
     <Box>
       <SearchSVG width={28} height={28} />
     </Box>

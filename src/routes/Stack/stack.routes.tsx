@@ -9,7 +9,8 @@ export const StackAuth = () => (
   <Stack.Navigator
     screenOptions={{
       headerShown: false,
-    }}>
+    }}
+  >
     <Stack.Screen name="SignIn" component={SignIn} />
     <Stack.Screen name="Register" component={Register} />
   </Stack.Navigator>
@@ -19,17 +20,8 @@ export const StackApp = () => (
   <Stack.Navigator
     screenOptions={{
       headerShown: false,
-    }}>
+    }}
+  >
     <Stack.Screen name="AppRoutes" component={TabRoutes} />
-  </Stack.Navigator>
-);
-
-export const StackRoutes = () => (
-  <Stack.Navigator
-    screenOptions={{
-      headerShown: false,
-    }}>
-    <Stack.Screen name="Authentication" component={StackAuth} />
-    <Stack.Screen name="App" component={StackApp} />
   </Stack.Navigator>
 );

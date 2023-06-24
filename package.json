@@ -8,7 +8,8 @@
     "ios": "expo run:ios",
     "web": "expo start --web",
     "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "eslint ./src --fix --ext .js,.jsx,.ts,.tsx"
+    "lint:fix": "eslint ./src --fix --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write \"**/*.{ts,tsx}\""
   },
   "dependencies": {
     "expo": "~48.0.18",

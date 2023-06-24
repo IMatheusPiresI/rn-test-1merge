@@ -63,7 +63,8 @@ export const CategorieList: React.FC = () => {
         h="74px"
         alignItems="center"
         borderRadius={10}
-        justifyContent={'center'}>
+        justifyContent={'center'}
+      >
         {item.icon}
       </Box>
       <Text color={'#000'} fontFamily="poppins" fontSize={12} mt="4">

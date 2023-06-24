@@ -8,14 +8,16 @@ export const Banner: React.FC = () => (
     <ImageBackground
       source={BannerPNG}
       resizeMode="cover"
-      style={styles.container}>
+      style={styles.container}
+    >
       <Box flex={1} py="2" px="4">
         <Text
           fontSize={20}
           fontFamily="poppins"
           fontWeight="medium"
           mt="2"
-          color="#000000">
+          color="#000000"
+        >
           Do you really have{'\n'}a creative{' '}
           <Text color={'#3EB489'}>idea?</Text>
         </Text>
@@ -25,7 +27,8 @@ export const Banner: React.FC = () => (
               fontSize={20}
               fontFamily="poppins"
               fontWeight="regular"
-              color="#fff">
+              color="#fff"
+            >
               Start Campaign
             </Text>
           </TouchableOpacity>
