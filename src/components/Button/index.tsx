@@ -10,14 +10,19 @@ type IProps = {
   title: string;
 } & TouchableOpacityProps;
 
-export const Button: React.FC<IProps> = ({ title, ...rest }) => (
-  <TouchableOpacity activeOpacity={0.7} {...rest} style={styles.button}>
+export const Button: React.FC<IProps> = ({ title, disabled, ...rest }) => (
+  <TouchableOpacity
+    activeOpacity={0.7}
+    {...rest}
+    style={[styles.button, disabled && styles.buttonDisabled]}
+  >
     <Text
       fontFamily="poppins"
       fontWeight="medium"
       fontSize={14}
       lineHeight={20}
-      color="#FFFFFF">
+      color="#FFFFFF"
+    >
       {title}
     </Text>
   </TouchableOpacity>
@@ -30,5 +35,9 @@ export const styles = StyleSheet.create({
     backgroundColor: '#000113',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  buttonDisabled: {
+    backgroundColor: '#6e6f79',
+    opacity: 0.8,
   },
 });

@@ -10,7 +10,8 @@ export const CardCampaign: React.FC = () => (
     backgroundColor={'#ffffff'}
     borderRadius={16}
     p="5"
-    width="screenWidth75">
+    width="screenWidth75"
+  >
     <Image
       source={CompaignsPhotoPNG}
       w="full"
@@ -23,7 +24,8 @@ export const CardCampaign: React.FC = () => (
         fontWeight="medium"
         fontSize={14}
         color="#000"
-        numberOfLines={1}>
+        numberOfLines={1}
+      >
         Help sarah to defet ...
       </Text>
       <Box
@@ -31,13 +33,15 @@ export const CardCampaign: React.FC = () => (
         borderColor="#3EB489"
         px="4"
         py="2px"
-        borderRadius={6}>
+        borderRadius={6}
+      >
         <Text
           fontFamily="poppins"
           fontWeight="medium"
           fontSize={12}
           color="#3EB489"
-          numberOfLines={1}>
+          numberOfLines={1}
+        >
           Medical
         </Text>
       </Box>
@@ -49,7 +53,8 @@ export const CardCampaign: React.FC = () => (
       lineHeight={24}
       color="#696969"
       mt="2"
-      numberOfLines={2}>
+      numberOfLines={2}
+    >
       Lorem ipsum dolor sit amet,adipisci consectetur adipisci ipsum dolor Lorem
       ipsum dolor sit amet,adipisci consectetur adipisci ipsum dolor
     </Text>
@@ -58,7 +63,8 @@ export const CardCampaign: React.FC = () => (
       h="2"
       bgColor={'rgba(62, 180, 137, .3)'}
       overflow="hidden"
-      mt="4">
+      mt="4"
+    >
       <Box w="45%" h="2" bgColor={'#3EB489'} borderRightRadius="full" />
     </Box>
     <HStack justifyContent={'space-between'}>
@@ -68,7 +74,8 @@ export const CardCampaign: React.FC = () => (
         fontSize={16}
         lineHeight={24}
         mt="1"
-        color="#3EB489">
+        color="#3EB489"
+      >
         Raised:$6000
       </Text>
       <Text
@@ -77,7 +84,8 @@ export const CardCampaign: React.FC = () => (
         fontSize={14}
         lineHeight={24}
         mt="1"
-        color="#3EB489">
+        color="#3EB489"
+      >
         45%
       </Text>
     </HStack>

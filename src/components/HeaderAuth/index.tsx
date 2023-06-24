@@ -18,7 +18,8 @@ export const HeaderAuth: React.FC<IProps> = ({ title }) => (
           fontFamily="poppins"
           fontWeight="extrabold"
           color={'#1E293B'}
-          fontSize={32}>
+          fontSize={32}
+        >
           {title}
         </Text>
       </Box>

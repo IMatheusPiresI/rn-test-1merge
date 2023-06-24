@@ -24,7 +24,8 @@ const TabView: React.FC<IViewProps> = ({
       fontWeight={'normal'}
       mt="2"
       mb={Platform.OS === 'ios' ? '2' : 0}
-      color={isFocused ? '#3EB489' : '#000000'}>
+      color={isFocused ? '#3EB489' : '#000000'}
+    >
       {routeName}
     </Text>
   </TouchableOpacity>

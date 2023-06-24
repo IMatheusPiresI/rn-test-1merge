@@ -2,9 +2,19 @@ import { Input, Text, VStack } from 'native-base';
 import React, { useRef, useState } from 'react';
 import { TextInputProps } from 'react-native';
 
-type IProps = { label: string } & TextInputProps;
+type IProps = {
+  label: string;
+  touched?: boolean;
+  error?: string;
+} & TextInputProps;
 
-export const InputText: React.FC<IProps> = ({ label, value, ...rest }) => {
+export const InputText: React.FC<IProps> = ({
+  label,
+  value,
+  touched,
+  error,
+  ...rest
+}) => {
   const inputRef = useRef<TextInputProps>(null);
   const [isFocused, setIsFocused] = useState<boolean>(false);
 
@@ -22,7 +32,8 @@ export const InputText: React.FC<IProps> = ({ label, value, ...rest }) => {
         fontFamily="poppins"
         fontWeight="normal"
         color="#000000"
-        fontSize={12}>
+        fontSize={12}
+      >
         {label}
       </Text>
       <Input
@@ -45,6 +56,17 @@ export const InputText: React.FC<IProps> = ({ label, value, ...rest }) => {
         ref={inputRef}
         {...rest}
       />
+      {touched && error && (
+        <Text
+          fontFamily="poppins"
+          fontWeight="medium"
+          color="#c11515"
+          fontSize={11}
+          mt="1"
+        >
+          {error}
+        </Text>
+      )}
     </VStack>
   );
 };

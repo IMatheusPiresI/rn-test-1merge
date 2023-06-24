@@ -14,7 +14,8 @@ export const CardProfileOption: React.FC<IProps> = ({ title }) => (
       justifyContent={'space-between'}
       alignItems="center"
       px="7"
-      py="3">
+      py="3"
+    >
       <Text fontSize={18} fontWeight="bold" fontFamily="poppins">
         {title}
       </Text>

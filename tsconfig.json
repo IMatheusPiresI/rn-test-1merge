@@ -14,7 +14,8 @@
       "@schemas/*": ["./schemas/*"],
       "@services/*": ["./services/*"],
       "@mocks/*": ["./mocks/*"],
-      "@database/*": ["./database/*"]
+      "@database/*": ["./database/*"],
+      "@contexts/*": ["./contexts/*"]
     }
   },
   "extends": "expo/tsconfig.base"

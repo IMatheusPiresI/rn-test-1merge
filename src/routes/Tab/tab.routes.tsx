@@ -13,7 +13,8 @@ export default function TabRoutes() {
       tabBar={(props) => <MyTabBar {...props} />}
       screenOptions={{
         headerShown: false,
-      }}>
+      }}
+    >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Saved" component={EmptyComponent} />
       <Tab.Screen name="Settings" component={EmptyComponent} />
