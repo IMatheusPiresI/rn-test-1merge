@@ -3,6 +3,7 @@ import {
   createStackNavigator,
 } from '@react-navigation/stack';
 import TabRoutes from '@routes/Tab/tab.routes';
+import Camera from '@screens/App/Camera';
 import ListMovies from '@screens/App/ListMovies';
 import MovieDetail from '@screens/App/MovieDetail';
 import Register from '@screens/Authentication/Register';
@@ -52,5 +53,6 @@ export const StackApp = () => (
   >
     <Stack.Screen name="AppRoutes" component={TabRoutes} />
     <Stack.Screen name="ExtraPage" component={StackSharedElement} />
+    <Stack.Screen name="Camera" component={Camera} />
   </Stack.Navigator>
 );

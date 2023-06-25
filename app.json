@@ -3,8 +3,6 @@
     "name": "test-mage",
     "slug": "test-mage",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "assetBundlePatterns": ["**/*"]
   }
 }
