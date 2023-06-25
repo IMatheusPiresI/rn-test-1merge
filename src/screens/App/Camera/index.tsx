@@ -4,7 +4,7 @@ import { useRealm } from '@database/schemas/UserSchema';
 import { useNavigation } from '@react-navigation/native';
 import { useAuthContext } from '@resources/hooks/useAuthContext';
 import { useGalleryPicker } from '@resources/hooks/useGalleryPicker';
-import { Camera as ExpoCamera, CameraType } from 'expo-camera';
+import { Camera as ExpoCamera, CameraType, FlashMode } from 'expo-camera';
 import { Box, HStack, StatusBar, VStack } from 'native-base';
 import { useEffect, useRef, useState } from 'react';
 import { Alert, StyleSheet, TouchableOpacity } from 'react-native';
@@ -16,8 +16,9 @@ import Animated, {
 } from 'react-native-reanimated';
 
 const Camera: React.FC = () => {
-  const [type, setType] = useState(CameraType.front);
+  const [type, setType] = useState(CameraType.back);
   const [permission, requestPermission] = ExpoCamera.useCameraPermissions();
+  const [flashMode, setFlashMode] = useState(FlashMode.off);
   const cameraRef = useRef<ExpoCamera>(null);
   const { base64PickImage } = useGalleryPicker();
   const pictureAnimate = useSharedValue(0);
@@ -47,6 +48,12 @@ const Camera: React.FC = () => {
 
   const handleGoBack = () => {
     navigation.goBack();
+  };
+
+  const toggleFlashMode = () => {
+    setFlashMode((current) =>
+      current === FlashMode.torch ? FlashMode.off : FlashMode.torch,
+    );
   };
 
   const pickImage = async () => {
@@ -117,14 +124,23 @@ const Camera: React.FC = () => {
             <IconBase name="arrow-back" color="#fff" />
           </Box>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={toggleFlashMode}>
           <Box>
-            <IconBase name="flash-on" color="#fff" />
+            {flashMode === FlashMode.torch ? (
+              <IconBase name="flash-off" color="#fff" />
+            ) : (
+              <IconBase name="flash-on" color="#fff" />
+            )}
           </Box>
         </TouchableOpacity>
       </HStack>
       <VStack flex={1} bgColor="#000">
-        <ExpoCamera style={styles.camera} type={type} ref={cameraRef}>
+        <ExpoCamera
+          style={styles.camera}
+          type={type}
+          ref={cameraRef}
+          flashMode={flashMode}
+        >
           <Animated.View style={rAnimatedPicture} />
         </ExpoCamera>
       </VStack>
