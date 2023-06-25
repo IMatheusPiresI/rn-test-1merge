@@ -1,3 +1,5 @@
+import { IMovie } from '@resources/hooks/useSectionMovies';
+
 export declare global {
   namespace ReactNavigation {
     interface RootParamList {
@@ -6,6 +8,8 @@ export declare global {
       SignIn: undefined;
       Register: undefined;
       Home: undefined;
+      ExtraPage: undefined;
+      MovieDetail: { movie: IMovie };
     }
   }
 }
