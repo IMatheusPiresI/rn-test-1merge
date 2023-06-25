@@ -2,6 +2,7 @@ import { Box, HStack, Modal, Text, VStack } from 'native-base';
 import React, { useState } from 'react';
 import {
   Alert,
+  Platform,
   TouchableOpacity,
   TouchableWithoutFeedback,
 } from 'react-native';
@@ -72,7 +73,11 @@ export const ButtonImagePicker: React.FC = () => {
             <Box
               bgColor={'#fff'}
               position="absolute"
-              top="screenHeight25"
+              top={
+                Platform.OS === 'ios'
+                  ? 'screenHeight25'
+                  : metrics.screenHeight * 0.23
+              }
               left={metrics.screenWidth * 0.59}
               borderRadius="8"
               shadow={2}
