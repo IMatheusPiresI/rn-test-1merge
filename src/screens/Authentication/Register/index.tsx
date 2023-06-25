@@ -116,7 +116,7 @@ export const Register: React.FC = () => {
                   <InputText
                     label="Password"
                     secureTextEntry
-                    placeholder="Digit your e-mail"
+                    placeholder="Digit your password"
                     value={formik.values.password}
                     onChangeText={formik.handleChange('password')}
                     onBlur={formik.handleBlur('password')}
@@ -128,7 +128,7 @@ export const Register: React.FC = () => {
                   <InputText
                     label="Confirm password"
                     secureTextEntry
-                    placeholder="Digit your e-mail"
+                    placeholder="Confirm your password"
                     value={formik.values.confirmPassword}
                     onChangeText={formik.handleChange('confirmPassword')}
                     onBlur={formik.handleBlur('confirmPassword')}
