@@ -10,6 +10,7 @@ export declare global {
       Home: undefined;
       ExtraPage: undefined;
       MovieDetail: { movie: IMovie };
+      Camera: undefined;
     }
   }
 }
