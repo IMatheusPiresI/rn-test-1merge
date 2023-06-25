@@ -10,6 +10,7 @@ const isIos = Platform.OS === 'ios';
 export default {
   screenWidth: width,
   screenWidth75: width * 0.75,
+  screenWidth30: width * 0.3,
   screenHeight: height,
   screenHeight30: height * 0.3,
   screenHeight35: height * 0.35,

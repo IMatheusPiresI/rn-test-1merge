@@ -18,6 +18,8 @@ import { useAuthContext } from '@resources/hooks/useAuthContext';
 export const Register: React.FC = () => {
   const realm = useRealm();
   const { setUser } = useAuthContext();
+  const navigation = useNavigation();
+
   const formik = useFormik<IRegisterSchema>({
     initialValues: {
       name: '',
@@ -53,7 +55,6 @@ export const Register: React.FC = () => {
 
     setUser(user);
   };
-  const navigation = useNavigation();
 
   const handleNavigateToSignIn = () => {
     navigation.navigate('SignIn');
