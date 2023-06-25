@@ -16,7 +16,7 @@ const Saved: React.FC = () => {
       alignItems={'center'}
       justifyContent={'center'}
     >
-      <Box>
+      <Box px="4">
         <Text
           fontFamily="poppins"
           fontWeight="medium"

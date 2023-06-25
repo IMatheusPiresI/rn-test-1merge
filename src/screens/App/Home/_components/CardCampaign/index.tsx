@@ -19,32 +19,35 @@ export const CardCampaign: React.FC = () => (
       alt="compaigns photo"
     />
     <HStack justifyContent="space-between" mt="2">
-      <Text
-        fontFamily="poppins"
-        fontWeight="medium"
-        fontSize={14}
-        color="#000"
-        numberOfLines={1}
-      >
-        Help sarah to defet ...
-      </Text>
-      <Box
-        borderWidth={1}
-        borderColor="#3EB489"
-        px="4"
-        py="2px"
-        borderRadius={6}
-      >
+      <HStack flex={1} w="full">
         <Text
           fontFamily="poppins"
           fontWeight="medium"
-          fontSize={12}
-          color="#3EB489"
+          fontSize={14}
+          color="#000"
           numberOfLines={1}
+          flex={1}
         >
-          Medical
+          Help sarah to defet ...
         </Text>
-      </Box>
+        <Box
+          borderWidth={1}
+          borderColor="#3EB489"
+          px="4"
+          py="2px"
+          borderRadius={6}
+        >
+          <Text
+            fontFamily="poppins"
+            fontWeight="medium"
+            fontSize={12}
+            color="#3EB489"
+            numberOfLines={1}
+          >
+            Medical
+          </Text>
+        </Box>
+      </HStack>
     </HStack>
     <Text
       fontFamily="poppins"

@@ -98,7 +98,7 @@ const Camera: React.FC = () => {
 
   if (!permission) return null;
 
-  if (!permission.granted) return <></>;
+  if (!permission.granted) return null;
 
   return (
     <VStack flex={1}>

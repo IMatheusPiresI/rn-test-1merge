@@ -75,6 +75,7 @@ export const ButtonImagePicker: React.FC = () => {
               top="screenHeight25"
               left={metrics.screenWidth * 0.59}
               borderRadius="8"
+              shadow={2}
             >
               <TouchableOpacity activeOpacity={0.6} onPress={handleOpenCamera}>
                 <HStack

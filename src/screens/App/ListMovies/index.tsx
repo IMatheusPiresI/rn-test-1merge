@@ -41,7 +41,7 @@ const ListMovies: React.FC = () => {
         <Text
           fontFamily="poppins"
           fontWeight="bold"
-          fontSize={24}
+          fontSize={22}
           textAlign="center"
           color="#ffffff"
         >

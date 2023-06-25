@@ -56,7 +56,7 @@ export const CategorieList: React.FC = () => {
   ];
 
   const renderItem = ({ item }: ListRenderItemInfo<ICategorie>) => (
-    <Box alignItems="center">
+    <Box alignItems="center" minWidth={'74px'}>
       <Box
         backgroundColor={item.color}
         w="74px"
@@ -67,7 +67,7 @@ export const CategorieList: React.FC = () => {
       >
         {item.icon}
       </Box>
-      <Text color={'#000'} fontFamily="poppins" fontSize={12} mt="4">
+      <Text color={'#000'} fontFamily="poppins" fontSize={10} mt="4">
         {item.name}
       </Text>
     </Box>

@@ -31,7 +31,7 @@ export const ListSectionMovie: React.FC<IProps> = ({ movies, title }) => {
       <Text
         fontFamily="poppins"
         fontWeight="bold"
-        fontSize={22}
+        fontSize={20}
         textAlign="center"
         color="#fff"
         mb="4"
